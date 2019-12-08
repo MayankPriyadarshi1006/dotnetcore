@@ -1,0 +1,36 @@
+﻿   @media (max-width: 767px)
+    {
+    body {
+        background-color: white!important;
+    }
+
+    .row {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .space5 {
+        height: 8px;
+    }
+    .panel-body {
+        padding: 2px !important;
+    }
+    th {
+        padding: 5px !important;
+         font-size:12px !important;
+         white-space:normal !important;
+    }
+    .table-responsive {
+        padding-right:2px !important;
+        padding-left:2px !important;
+    }
+    td {
+       font-size:11px !important; 
+       padding:5px !important;  
+       white-space:normal !important;
+    }
+    .row {
+        margin-right:0px !important;
+        margin-left:0px !important;
+    }
+    }

@@ -1,0 +1,221 @@
+.label
+{
+
+	
+}
+.checkbox
+{
+	width:96%;
+	height:30px;	
+	padding-left:5px;
+	padding-right:5px;
+}
+.radiobutton
+{
+	width:96%;
+	height:30px;	
+	padding-left:5px;
+	padding-right:5px;
+}
+.texts
+{
+	border:1px solid #EEE;
+	width:25%;
+	height:25px;
+}
+
+.textm
+{
+	border:1px solid #EEE;
+	width:50%;
+	height:25px;
+}
+
+.text
+{
+	border:1px solid #EEE;
+	width:99%;
+	height:25px;
+}
+.multiline
+{
+	border:1px solid #EEE;
+	width:99%;
+	height:70px;
+}
+
+
+
+.date
+{
+	border:1px solid #EEE;
+	width:100px;
+	height:30px;	
+	padding-left:5px;
+	padding-right:5px;
+}
+.dropdown
+{
+	border:1px solid #EEE;
+	width:100%;
+	height:30px;	
+	padding-left:5px;
+	padding-right:5px;
+}
+.dropdowns
+{
+	border:1px solid #EEE;
+	width:25%;
+	height:30px;	
+	padding-left:5px;
+	padding-right:5px;
+}
+
+.dropdownsm
+{
+	border:1px solid #EEE;
+	width:100px;
+	height:30px;	
+	padding-left:5px;
+	padding-right:5px;
+}
+
+
+.dropdownm
+{
+	border:1px solid #EEE;
+	width:50%;
+	height:30px;	
+	padding-left:5px;
+	padding-right:5px;
+}
+.button-search
+{
+	border:0px;
+	background-color:#090;
+	color:#FFF;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:5px;	
+	padding-bottom:5px;	
+}
+
+
+.button
+{
+	border:0px;
+	background-color:#00c0ef;
+	color:#FFF;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:5px;	
+	padding-bottom:5px;	
+}
+
+.button-download
+{
+	border:0px;
+	background-color:#00c0ef;
+	color:#FFF;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:10px;	
+	padding-bottom:10px;	
+	font-size:16px;
+	cursor:pointer;
+}
+
+.button-export
+{
+	border:0px;
+	background-color:#0C0;
+	color:#FFF;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:5px;	
+	padding-bottom:5px;	
+}
+
+.button-reset
+{
+	border:0px;
+	background-color:#C30;
+	color:#FFF;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:5px;	
+	padding-bottom:5px;	
+}
+
+.button-edit
+{
+	border:0px;
+	background-color:#090;
+	color:#FFF;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:5px;	
+	padding-bottom:5px;	
+}
+.button-delete
+{
+	border:0px;
+	background-color:#C30;
+	color:#FFF;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:5px;	
+	padding-bottom:5px;	
+}
+.button-submit	
+{
+	border:0px;
+	background-color:#090;
+	color:#FFF;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:5px;	
+	padding-bottom:5px;	
+}
+
+.button-save
+{
+	border:0px;
+	background-color:#090;
+	color:#FFF;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:5px;	
+	padding-bottom:5px;	
+}
+.button-cancel
+{
+	border:0px;
+	background-color:#C30;
+	color:#FFF;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:5px;	
+	padding-bottom:5px;	
+}
+
+ 
+ .form-heading
+ {
+	 text-align:right;
+	 font-weight:bold;
+	 
+ }
+ .form-label
+ {
+	 text-align:right;
+	 vertical-align:top;
+	 
+ }
+ .error
+ {
+	 color:#F00;
+	 font-weight:bold;
+	 
+	 
+ }

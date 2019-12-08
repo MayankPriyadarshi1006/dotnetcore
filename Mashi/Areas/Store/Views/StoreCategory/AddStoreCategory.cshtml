@@ -1,0 +1,121 @@
+﻿@model Mashi.Areas.Store.Models.StoreCategory.StoreCategoryModel
+@{
+    ViewBag.Title = "AddStoreCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+    google.load("elements", "1", {
+        packages: "transliteration"
+    });
+    function onLoad() {
+        var options = {
+            sourceLanguage:
+                google.elements.transliteration.LanguageCode.ENGLISH,
+            destinationLanguage:
+                [google.elements.transliteration.LanguageCode.ARABIC],
+            shortcutKey: 'ctrl+g',
+            transliterationEnabled: true
+        };
+
+        var control =
+            new google.elements.transliteration.TransliterationControl(options);
+
+        // Enable transliteration in the editable elements with id
+        // 'transliterateDiv'.
+        control.makeTransliteratable(['storeCategoryNameAB']);
+    }
+    google.setOnLoadCallback(onLoad);
+</script>
+
+@*<script>
+    $(document).ready(function () {
+
+        $("#storeCategoryName").keyup(function (event) {
+            var stt = $(this).val();
+            $("#storeCategoryNameAB").val(stt);
+            $("#storeCategoryNameAB").trigger('change');
+        });
+    });
+</script>*@
+
+
+@*<script>
+    function OnLoad() {
+        var options = {
+            sourceLanguage:
+            google.elements.transliteration.LanguageCode.ENGLISH,
+            destinationLanguage:
+            [google.elements.transliteration.LanguageCode.ARABIC],
+            shortcutKey: 'ctrl+g',
+            transliterationEnabled: true
+        };
+
+        var control = new google.elements.transliteration.TransliterationControl(options);
+        control.makeTransliteratable(["storeCategoryNameAB"]);
+        var keyVal = 32; // Space key
+        $("#storeCategoryName").on('keydown', function (event) {
+            if (event.keyCode === 32) {
+                var engText = $("#storeCategoryName").val() + " ";
+                var engTextArray = engText.split(" ");
+                $("#storeCategoryNameAB").val($("#storeCategoryNameAB").val() + engTextArray[engTextArray.length - 2]);
+
+                document.getElementById("storeCategoryNameAB").focus();
+                $("#storeCategoryNameAB").trigger({
+                    type: 'keypress', keyCode: keyVal, which: keyVal, charCode: keyVal
+                });
+            }
+        });
+
+        $("#storeCategoryNameAB").bind("keyup", function (event) {
+            setTimeout(function () { $("#storeCategoryName").val($("#storeCategoryName").val() + " "); document.getElementById("storeCategoryName").focus() }, 0);
+        });
+    } //end onLoad function
+
+    google.setOnLoadCallback(OnLoad);
+</script> *@
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <h3>Add Store Category</h3>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <a class="btn btn-primary pull-right" href="/Store/StoreCategory">Back <i aria-hidden="true" class="fa fa-arrow-left fa-fw"></i></a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12">
+
+        @using (Html.BeginForm("AddStoreCategory", "StoreCategory", FormMethod.Post, new { @class = "form-group" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            @Html.HiddenFor(m => m.storeCategoryId)
+            
+            <div class="form-group">
+                <label>Store Code:</label>
+                @Html.TextBoxFor(m => m.storeCategoryCode, new { @class = "form-control", @placeholder = "Enter store code" })
+                @Html.ValidationMessageFor(m => m.storeCategoryCode, "", new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                <label>Store Name:</label>
+                @Html.TextBoxFor(m => m.storeCategoryName, new { @class = "form-control", @placeholder = "Enter store name" })
+                @Html.ValidationMessageFor(m => m.storeCategoryName, "", new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                <label>Store Name in Arabic:</label>
+                @Html.TextBoxFor(m => m.storeCategoryNameAB, new { @class = "form-control", @placeholder = "Enter store name in Arabic" })
+                @Html.ValidationMessageFor(m => m.storeCategoryNameAB, "", new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                <label>Parent Store Category:</label>
+                @Html.DropDownListFor(m => m.ParentStoreCategoryId, (SelectList)ViewBag.ParentDD, "--Select Parent Category--", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.ParentStoreCategoryId, "", new { @class = "danger" })
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        }
+
+    </div>
+</div>
+

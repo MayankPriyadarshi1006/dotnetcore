@@ -1,0 +1,204 @@
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\obj\Debug\Mashi.csprojResolveAssemblyReference.cache
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\Mashi.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\Mashi.pdb
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\Antlr3.Runtime.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\DotNetOpenAuth.AspNet.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\DotNetOpenAuth.Core.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\DotNetOpenAuth.OAuth.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\DotNetOpenAuth.OpenId.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\EntityFramework.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\FluentValidation.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\FluentValidation.Mvc.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\Microsoft.Data.Edm.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\Microsoft.Data.OData.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\Microsoft.Web.Infrastructure.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\Newtonsoft.Json.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Net.Http.Formatting.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Spatial.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.Helpers.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.Http.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.Http.OData.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.Http.WebHost.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.Mvc.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.Optimization.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.Razor.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.WebPages.Deployment.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.WebPages.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.WebPages.Razor.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\WebGrease.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\WebMatrix.Data.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\WebMatrix.WebData.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\FluentValidation.pdb
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\FluentValidation.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\FluentValidation.Mvc.pdb
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\FluentValidation.Mvc.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\EntityFramework.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\Newtonsoft.Json.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Net.Http.Formatting.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.Helpers.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.Http.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.Http.WebHost.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.Mvc.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.Razor.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.WebPages.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.WebPages.Deployment.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.WebPages.Razor.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\WebMatrix.Data.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\WebMatrix.WebData.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\DotNetOpenAuth.AspNet.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\DotNetOpenAuth.Core.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\DotNetOpenAuth.OAuth.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\DotNetOpenAuth.OpenId.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Web.Http.OData.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\Microsoft.Data.Edm.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\Microsoft.Data.OData.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\System.Spatial.xml
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\de\FluentValidation.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\es\FluentValidation.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\fr\FluentValidation.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\it\FluentValidation.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\ko\FluentValidation.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\nl\FluentValidation.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\pl\FluentValidation.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\pt\FluentValidation.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\ru\FluentValidation.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\sv\FluentValidation.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\tr\FluentValidation.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\de\Microsoft.Data.Edm.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\es\Microsoft.Data.Edm.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\fr\Microsoft.Data.Edm.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\it\Microsoft.Data.Edm.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\ja\Microsoft.Data.Edm.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\ko\Microsoft.Data.Edm.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\ru\Microsoft.Data.Edm.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\de\Microsoft.Data.OData.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\es\Microsoft.Data.OData.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\fr\Microsoft.Data.OData.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\it\Microsoft.Data.OData.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\ja\Microsoft.Data.OData.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\ko\Microsoft.Data.OData.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\ru\Microsoft.Data.OData.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\de\System.Spatial.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\es\System.Spatial.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\fr\System.Spatial.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\it\System.Spatial.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\ja\System.Spatial.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\ko\System.Spatial.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\ru\System.Spatial.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\zh-Hans\System.Spatial.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\bin\zh-Hant\System.Spatial.resources.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\obj\Debug\Mashi.dll
+E:\Pankaj Pandey\New Projects\P & G Egypt\Mashi\Mashi\obj\Debug\Mashi.pdb
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\Mashi.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\Mashi.pdb
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\Antlr3.Runtime.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\DotNetOpenAuth.AspNet.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\DotNetOpenAuth.Core.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\DotNetOpenAuth.OAuth.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\DotNetOpenAuth.OpenId.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\EntityFramework.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\FluentValidation.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\FluentValidation.Mvc.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\Microsoft.Data.Edm.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\Microsoft.Data.OData.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\Microsoft.Web.Infrastructure.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\Newtonsoft.Json.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Net.Http.Formatting.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Spatial.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.Helpers.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.Http.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.Http.OData.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.Http.WebHost.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.Mvc.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.Optimization.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.Razor.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.WebPages.Deployment.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.WebPages.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.WebPages.Razor.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\WebGrease.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\WebMatrix.Data.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\WebMatrix.WebData.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\FluentValidation.pdb
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\FluentValidation.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\FluentValidation.Mvc.pdb
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\FluentValidation.Mvc.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\EntityFramework.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\Newtonsoft.Json.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Net.Http.Formatting.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.Helpers.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.Http.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.Http.WebHost.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.Mvc.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.Razor.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.WebPages.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.WebPages.Deployment.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.WebPages.Razor.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\WebMatrix.Data.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\WebMatrix.WebData.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\DotNetOpenAuth.AspNet.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\DotNetOpenAuth.Core.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\DotNetOpenAuth.OAuth.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\DotNetOpenAuth.OpenId.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Web.Http.OData.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\Microsoft.Data.Edm.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\Microsoft.Data.OData.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\System.Spatial.xml
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\de\FluentValidation.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\es\FluentValidation.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\fr\FluentValidation.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\it\FluentValidation.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\ko\FluentValidation.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\nl\FluentValidation.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\pl\FluentValidation.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\pt\FluentValidation.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\ru\FluentValidation.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\sv\FluentValidation.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\tr\FluentValidation.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\de\Microsoft.Data.Edm.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\es\Microsoft.Data.Edm.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\fr\Microsoft.Data.Edm.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\it\Microsoft.Data.Edm.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\ja\Microsoft.Data.Edm.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\ko\Microsoft.Data.Edm.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\ru\Microsoft.Data.Edm.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\de\Microsoft.Data.OData.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\es\Microsoft.Data.OData.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\fr\Microsoft.Data.OData.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\it\Microsoft.Data.OData.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\ja\Microsoft.Data.OData.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\ko\Microsoft.Data.OData.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\ru\Microsoft.Data.OData.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\de\System.Spatial.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\es\System.Spatial.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\fr\System.Spatial.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\it\System.Spatial.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\ja\System.Spatial.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\ko\System.Spatial.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\ru\System.Spatial.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\zh-Hans\System.Spatial.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\bin\zh-Hant\System.Spatial.resources.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\obj\Debug\Mashi.csprojResolveAssemblyReference.cache
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\obj\Debug\Mashi.dll
+E:\Mayank\MashiCrudOperation\Mashi\Mashi\obj\Debug\Mashi.pdb

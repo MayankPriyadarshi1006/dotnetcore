@@ -1,0 +1,507 @@
+﻿@{
+    ViewBag.Title = "SchemeDocuments";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery.simplePagination.js"></script>
+<link href="~/Content/themes/base/SimplePagination.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    $(function () {
+
+        $('#AttachImage').fileupload({
+            dataType: 'json',
+            url: '/Common/UploadAllFiles',
+            autoUpload: true,
+            done: function (e, data) {
+                debugger
+                $("body").removeClass("loading");
+                if (data.result.message.toString() == "Success") {
+                    $('#AttachImagePathDocument').val(data.result.name);
+                    $('#AttachImagePathfilename').attr('src', data.result.name);
+                    $('#msgAttachCertificate').html('Uploaded Successfully!!');
+                    $('#btn_clearImage').css('display', 'inline');
+                    $('#AttachImagePathfilename').css('display', 'inline');
+                }
+                else {
+                    $('#AttachImagePathDocument').val('');
+                    $('#AttachImagePathfilename').attr('src', data.result.name);
+                    $('#msgAttachCertificate').html(data.result.message);
+
+                    $('#AttachCertificatePathprogresslarge .progress-barHSC').css('width', '0%');
+                    $('#AttachImage_sr-only').html('0% completed!');
+                    $('#btn_clearImage').css('display', 'none');
+                    $('#AttachImagePathDocument').css('display', 'inline');
+                }
+            }
+        }).on('btn_clearImage', function (e, data) {
+            $("body").addClass("loading");
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('#AttachCertificatePathprogresslarge .progress-barHSC').css('width', progress + '%');
+            $('#AttachImage_sr-only').html(progress + '% completed!');
+        });
+
+        $('#AttachPdf').fileupload({
+            dataType: 'json',
+            url: '/Common/UploadPdf',
+            autoUpload: true,
+            done: function (e, data) {
+                debugger
+                $("body").removeClass("loading");
+                if (data.result.message.toString() == "Success") {
+                    $('#AttachPdfPathDocument').val(data.result.name);
+                    $('#AttachPdfPathfilename').attr('src', data.result.name);
+                    $('#msgAttachCertificatePdf').html('Uploaded Successfully!!');
+                    $('#btn_clearPdf').css('display', 'inline');
+                    $('#AttachPdfPathfilename').css('display', 'inline');
+                }
+                else {
+                    $('#AttachPdfPathDocument').val('');
+                    $('#AttachPdfPathfilename').attr('src', data.result.name);
+                    $('#msgAttachCertificatePdf').html(data.result.message);
+
+                    $('#AttachCertificatePathprogresslarge .progress-barHSC').css('width', '0%');
+                    $('#AttachPdf_sr-only').html('0% completed!');
+                    $('#btn_clearPdf').css('display', 'none');
+                    $('#AttachPdfPathDocument').css('display', 'inline');
+                }
+            }
+        }).on('btn_clearPdf', function (e, data) {
+            $("body").addClass("loading");
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('#AttachCertificatePathprogresslarge .progress-barHSC').css('width', progress + '%');
+            $('#AttachPdf_sr-only').html(progress + '% completed!');
+        });
+
+    });
+  
+    
+ 
+    function clearimageFront(fld, imgsrc, msg, button) {
+        $('#' + fld).val('');
+        // $('#' + imgsrc).attr('href', '');
+        $('#' + imgsrc).attr('src', '');
+        $('#' + msg).html('');
+        $('#' + button).css('display', 'none');
+        $('#progressFR .progress-bar').css('display', 'none');
+        //$('#progressAttendence .progress-bar').css('display', 'none');
+        $('#AttachImagePathfilename').attr('src', '');
+        $('#AttachImagePathfilename').css('display', 'none');
+        $('#msgAttachCertificate').html('');
+    }
+
+    function clearPdfFront(fld, imgsrc, msg, button) {
+        $('#' + fld).val('');
+        $('#' + imgsrc).attr('src', '');
+        $('#' + msg).html('');
+        $('#' + button).css('display', 'none');
+        $('#progressFR .progress-bar').css('display', 'none');
+        $('#AttachPdfPathfilename').attr('src', '');
+        $('#AttachPdfPathfilename').css('display', 'none');
+        $('#msgAttachCertificate').html('');
+    }
+
+    function SaveSchemeDetails() {
+        debugger;
+        var SchemeTypeId = $('#SchemeTypeId').val().trim();
+        var SchemeDocumentName = $('#SchemeDocumentName').val().trim();
+        var AbSchemeDocumentName = $('#AbSchemeDocumentName').val();
+        var Description = $('#Description').val().trim();
+        var AbDescription = $('#AbDescription').val();
+        var SchemeDocumentOrder = $('#SchemeDocumentOrder').val();
+        var AttachImagePathfilename = $('#AttachImagePathfilename').attr('src');
+        var AttachPdfPathfilename = $('#AttachPdfPathfilename').attr('src');
+   
+            $.ajax({
+                cache: false,
+                type: "Post",
+                url: "/Scheme/SchemeDocument/SaveSchemeDetails",
+                data:{
+                "SchemeTypeId": SchemeTypeId,
+                "SchemeDocumentName": SchemeDocumentName,
+                "AbSchemeDocumentName": AbSchemeDocumentName,
+                "Description": Description,
+                "AbDescription": AbDescription,
+                "SchemeDocumentOrder": SchemeDocumentOrder,
+                "AttachImagePathfilename": AttachImagePathfilename,
+                "AttachPdfPathfilename": AttachPdfPathfilename,
+            },
+                success: function (data) {
+                    if (data == "1") {
+                        debugger;
+                    alert('Scheme Record Inserted Sucessfully')
+                    ResetAction();
+                    Se();
+                }
+                else {
+                    alert('Scheme Record Insertion Failed')
+                }
+            }, error: function (xhr, ajaxOptions, thrownError) {
+                alert('Failed to retrieve Module Data.');
+            }
+            });
+        }
+    function Search() {
+
+        $("#PageSize").val($("#SelectPageSize").val());
+        $('#pageNumber').val(1);
+        GetSchemeList();
+        $('#btnUpdate').hide();
+        $('#btnSave').show();
+        $('#btnCancel').show();
+    };
+    function GetSchemeList() {
+        debugger;
+        var SchemeDocumentName = $('#SchemeDocumentName').val();
+        var AbSchemeDocumentName = $('#AbSchemeDocumentName').val();
+        var pageNumber = parseInt($('#pageNumber').val());
+        var PageSize = parseInt($('#PageSize').val());
+
+        $("body").addClass("loading");
+        $.ajax({
+            cache: false,
+            type: "GET",
+            url: "/Scheme/SchemeDocument/GetSchemeList",
+            data: { "SchemeDocumentName": SchemeDocumentName, "AbSchemeDocumentName": AbSchemeDocumentName, "PageNumber": pageNumber, "PageSize": PageSize },
+            success: function (data) {
+                debugger;
+                var totalrecodrs = parseInt(data.toString().split('~')[1]);
+                $("body").removeClass("loading");
+                if (pageNumber == 1) {
+                    $("#Paginate").pagination({
+                        items: parseInt(data.toString().split('~')[1]),
+                        itemsOnPage: parseInt($('#PageSize').val()),
+                        cssStyle: 'light-theme',
+                        onPageClick: function (pageNumber, event) {
+                            $('#pageNumber').val(pageNumber);
+                            window.scrollTo(0, 0);
+                            GetSchemeList();
+                        }
+                    });
+                }
+                else if (totalrecodrs == 0) {
+                    $("#Paginate").pagination({});
+                }
+
+                $("#tblContentProduct").html(data.toString().split('~')[0]);
+                $("body").removeClass("loading");
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert('Failed to retreive data.');
+                $("body").removeClass("loading");
+            }
+        });
+    }
+    $(function () {
+        $("#SelectPageSize").change(function () {
+            Search();
+        });
+        Search();
+    });
+
+    function EditSchemeDetails(SchemeDocumentId) {
+        debugger;
+        ResetAction();
+        $('#hidSchemeId').val(SchemeDocumentId);
+        $.ajax({
+            cache: false,
+            type: "GET",
+            url: "/Scheme/SchemeDocument/GetSchemeListById",
+            data: { "SchemeDocumentId": SchemeDocumentId },
+            success: function (data) {
+                debugger;
+                if (data.toString() != "") {
+                    if (data.toString().split('~')[0] == 0) {
+                        $('#SchemeTypeId').val("");
+                    }
+                    else {
+                        $('#SchemeTypeId').val(data.toString().split('~')[0]);
+                    }
+                    $('#SchemeDocumentName').val(data.toString().split('~')[1]);
+                    $('#AbSchemeDocumentName').val(data.toString().split('~')[2]);
+                    $('#Description').val(data.toString().split('~')[3]);
+                    $('#AbDescription').val(data.toString().split('~')[4]);
+                    var img1 = data.split('~')[5];
+                    if (img1 == undefined || img1 == '' || img1.search('http') == -1) {
+                        $("#AttachImagePathfilename").attr('src', '');
+                        $("#AttachImagePathfilename").css('display', 'none');
+                    }
+                    else {
+                        $("#AttachImagePathfilename").attr('src', data.split('~')[5]);
+                        $("#AttachImagePathfilename").css('display', 'block');
+                        $("#btn_clearImage").css('display', 'inline');
+
+                    }
+                    var pdf1 = data.split('~')[6];
+                    if (pdf1 == undefined || pdf1 == '' || pdf1.search('http') == -1) {
+                        $("#AttachPdfPathfilename").attr('src', '');
+                        $("#AttachPdfPathfilename").css('display', 'none');
+                    }
+                    else {
+                        $("#AttachPdfPathfilename").attr('src', data.split('~')[6]);
+                        $("#AttachPdfPathfilename").css('display', 'block');
+                        $("#btn_clearPdf").css('display', 'inline');
+
+                    }
+                    $('#SchemeDocumentOrder').val(data.toString().split('~')[7]);
+                    $('#btnSave').hide();
+                    $('#btnUpdate').show();
+                }
+
+            }, error: function (xhr, ajaxOptions, thrownError) {
+                alert('Failed to Fetch Scheme Data.');
+            }
+        });
+    }
+
+
+    function ResetAction() {
+        $('#SchemeTypeId').val('');
+        $('#SchemeDocumentName').val('');
+        $('#AbSchemeDocumentName').val('');
+        $('#Description').val('');
+        $('#AbDescription').val('');
+        $('#SchemeDocumentOrder').val('');
+    }
+
+
+    function DeleteSchemeRecord(SchemeDocumentId) {
+        debugger;
+        var strconfirm = confirm("Are you sure? Do you Really want to delete Record?");
+        if (strconfirm == true) {
+            $.ajax({
+                cache: false,
+                type: "Get",
+                url: "/Scheme/SchemeDocument/DeleteSchemeRecord",
+                data: { "SchemeDocumentId": SchemeDocumentId },
+                success: function (data) {
+                    debugger;
+                    if (data.toString() == "1") {
+                        alert("Scheme  Record Deleted Sucessfully !");
+                        GetSchemeList();
+                    }
+                    else {
+
+                        alert("Scheme  Record Deletion Failed !");
+                        GetSchemeList();
+                    }
+
+                }, error: function (e) {
+                    alert('Failed to retrieve data.');
+                }
+            });
+        }
+    }
+    function UpdateSchemeRecord() {
+        debugger;
+        var SchemeTypeId = $('#SchemeTypeId').val().trim();
+        var SchemeDocumentName = $('#SchemeDocumentName').val().trim();
+        var AbSchemeDocumentName = $('#AbSchemeDocumentName').val();
+        var Description = $('#Description').val().trim();
+        var AbDescription = $('#AbDescription').val();
+        var SchemeDocumentOrder = $('#SchemeDocumentOrder').val();
+        var AttachImagePathfilename = $('#AttachImagePathfilename').attr('src');
+        var AttachPdfPathfilename = $('#AttachPdfPathfilename').attr('src');
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url: "/Scheme/SchemeDocument/UpdateModuleRecord",
+                data:{
+                    "SchemeTypeId": SchemeTypeId,
+                    "SchemeDocumentName": SchemeDocumentName,
+                    "AbSchemeDocumentName": AbSchemeDocumentName,
+                    "Description": Description,
+                    "AbDescription": AbDescription,
+                    "SchemeDocumentOrder": SchemeDocumentOrder,
+                    "AttachImagePathfilename": AttachImagePathfilename,
+                    "AttachPdfPathfilename": AttachPdfPathfilename,
+                },
+                success: function (data) {
+                    debugger;
+                    if (data == "1") {
+                        alert('Scheme Record Updated Sucessfully!')
+                        GetSchemeList();
+                  
+                        $('#btnSave').show();
+                        $('#btnUpdate').hide();
+                        $('#btnCancel').show();
+                        $('#AddModule').show();
+                        $('#UpdateModule').hide();
+                        $(function () {
+                            $('.bs-example-modal-lg').modal('toggle');
+                        });
+
+                    }
+                  
+                    else {
+                        alert('Scheme Record Updation Failed')
+                    }
+                }, error: function (xhr, ajaxOptions, thrownError) {
+                    alert('Failed to Update Scheme Data.');
+                }
+            });
+        }
+    
+</script>
+
+
+<div class="row">
+    <div class="space5"></div>
+    <div class="heading-group">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="heading">Scheme Document</div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default " id="collapseExample1">
+        <div class="panel-body">
+                <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group">
+                                    <label for="SchemeTypeId">Scheme Type Name *</label>
+                                    @Html.DropDownList("SchemeTypeId", (SelectList)ViewBag.SchemeTypeId, "Select Scheme Type Name", new { @class = "form-control" })
+                                </div>
+                            </div>
+               
+                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right">
+                    <div class="form-group">
+                        <div id="search" style="margin-top: 22PX;">
+                            <input type="button" id="Search" class="btn bg-orange" value="Search" onclick="Search()" />
+                           <button type="button" class="btn bg-orange" data-toggle="modal" data-target="#myModal" onclick="ResetModal()" tabindex="13"><i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>Add Scheme Document Detail</button>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="form-group">
+                    <label for="SelectPageSize">Show:</label>
+                    <select id="SelectPageSize" name="SelectPageSize" class="form-control">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                </div>
+            </div>
+                <div class="space5"></div>
+ <input type="hidden" id="hidSchemeId" value="" />
+<input type="hidden" id="pageNumber" value="1" />
+<input type="hidden" id="PageSize" value="25" />
+<div id="Paginate"></div>
+<div class="clearfix"></div>
+<div class="space20"></div>
+                </div>
+            </div>
+        </div>
+      <div class="table-responsive">
+       <table id="tblContentProduct" class="table table-bordered table-stripped table-hover"></table>
+                                        
+      </div>
+
+    </div>
+
+<div id="myModal" class="modal fade bs-example-modal-lg" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="AddModule">Add Scheme Document</h4>
+                <h4 class="modal-title" id="UpdateModule">Update Scheme Document</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="form-group">
+                            <label for="SchemeDocumentName">Scheme Document Name<span> *</span></label>
+                            <input type="text" class="form-control" name="SchemeDocumentName" placeholder="Scheme Document Name Search" id="SchemeDocumentName" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="form-group">
+                            <label for="AbSchemeDocumentName">Ab Scheme Document Name<span> *</span></label>
+                            <input type="text" class="form-control" name="AbSchemeDocumentName" placeholder="Ab Scheme Document Name Search" id="AbSchemeDocumentName" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="form-group">
+                            <label for="Description">Description<span> *</span></label>
+                            <input type="text" class="form-control" name="Description" placeholder="Description" id="Description"  />
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="form-group">
+                            <label for="AbDescription">Ab Description<span> *</span></label>
+                            <input type="text" class="form-control" name="Ab Description" placeholder="Ab Description" id="AbDescription"  />
+                        </div>
+                    </div>
+                     
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="form-group">
+                            <label for="SchemeDocumentOrder">Scheme Document Order<span> *</span></label>
+                            <input type="text" class="form-control" name="SchemeDocumentOrder" placeholder="SchemeDocumentOrder" id="SchemeDocumentOrder" />
+                        </div>
+                    </div>
+                 
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align:center">               
+                         <label for="UploadImagePath">Upload Image Path </label>  <br />                
+                        <span class="btn btn-success fileinput-button">
+                            <i class="glyphicon glyphicon-plus"></i>
+                            <span>Choose files</span>
+                            <input id="AttachImage" type="file" name="files[]">
+                        </span>
+
+                        <input type="button" value="Clear" id="btn_clearImage" onclick="clearimageFront('AttachImagePathDocument', 'AttachImagePathfilename', 'msgAttachCertificate', 'btn_clearImage')" class="button-delete" style="margin-top: 2px; display: none;" />
+
+                        <br />
+                        <div style="display: none" id="AttachImagePath" class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                <span id="AttachImage_sr-only" class="sr-only">0% complete</span>
+                            </div>
+                        </div>
+                        <img id="AttachImagePathfilename" src="" style="width: 200px" />
+                        <label id="msgAttachCertificate"></label>
+                        <input type="hidden" value="" name="AttachImagePathDocument" id="AttachImagePathDocument" />
+                   </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align:center">               
+                         <label for="UploadPdfPath">Upload PDf Path </label>  <br />                
+                        <span class="btn btn-success fileinput-button">
+                            <i class="glyphicon glyphicon-plus"></i>
+                            <span>Choose files</span>
+                            <input id="AttachPdf" type="file" name="files[]">
+                        </span>
+
+                        <input type="button" value="Clear" id="btn_clearPdf" onclick="clearPdfFront('AttachImagePdfDocument', 'AttachPdfPathfilename', 'msgAttachCertificatePdf', 'btn_clearPdf')" class="button-delete" style="margin-top: 2px; display: none;" />
+
+                        <br />
+                        <div style="display: none" id="AttachPdfPath" class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                <span id="AttachPdf_sr-only" class="sr-only">0% complete</span>
+                            </div>
+                        </div>
+                        <img id="AttachPdfPathfilename" src="" style="width: 200px" />
+                        <label id="msgAttachCertificatePdf"></label>
+                        <input type="hidden" value="" name="AttachImagePathDocument" id="AttachPdfPathDocument" />
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                        <div id="divsave">
+                            <input type="button" id="btnSave" class="bg-orange btn" value="Save" onclick="SaveSchemeDetails()" tabindex="8" />
+                            <input type="button" id="btnUpdate" class="bg-orange btn" value="Update" onclick="UpdateModuleRecord()" tabindex="9" />
+                            <input type="button" id="btnCancel" class="bg-orange btn" value="Reset" onclick="ResetAction()" tabindex="10" />
+                           @* <button type="button" class="bg-orange btn" data-dismiss="modal" tabindex="10" onclick="ResetModal()">Close</button>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

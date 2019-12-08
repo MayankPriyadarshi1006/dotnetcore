@@ -1,0 +1,53 @@
+/* iCheck plugin Flat skin, orange
+----------------------------------- */
+.icheckbox_flat-orange,
+.iradio_flat-orange {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 17px;
+    height: 17px;
+    background: url(orange.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_flat-orange {
+    background-position: 0 0;
+}
+    .icheckbox_flat-orange.checked {
+        background-position: -16px 0;
+    }
+    .icheckbox_flat-orange.disabled {
+        background-position: -34px 0;
+        cursor: default;
+    }
+    .icheckbox_flat-orange.checked.disabled {
+        background-position: -50px 0;
+    }
+
+.iradio_flat-orange {
+    background-position: -68px 0;
+}
+    .iradio_flat-orange.checked {
+        background-position: -84px 0;
+    }
+    .iradio_flat-orange.disabled {
+        background-position: -128px 0;
+        cursor: default;
+    }
+    .iradio_flat-orange.checked.disabled {
+        background-position: -150px 0;
+    }
+
+/* HiDPI support */
+@media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+    .icheckbox_flat-orange,
+    .iradio_flat-orange {
+        background-image: url(orange@2x.png);
+        -webkit-background-size: 176px 22px;
+        background-size: 176px 22px;
+    }
+}

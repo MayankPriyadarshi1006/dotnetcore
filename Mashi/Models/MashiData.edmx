@@ -1,0 +1,1468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MASHIModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="MASHIModelStoreContainer">
+          <EntitySet Name="City" EntityType="MASHIModel.Store.City" store:Type="Tables" Schema="AdminManagement" />
+          <EntitySet Name="Country" EntityType="MASHIModel.Store.Country" store:Type="Tables" Schema="AdminManagement" />
+          <EntitySet Name="EmailAccount" EntityType="MASHIModel.Store.EmailAccount" store:Type="Tables" Schema="AdminManagement" />
+          <EntitySet Name="FCMNotification" EntityType="MASHIModel.Store.FCMNotification" store:Type="Tables" Schema="AdminManagement" />
+          <EntitySet Name="Message" EntityType="MASHIModel.Store.Message" store:Type="Tables" Schema="AdminManagement" />
+          <EntitySet Name="NotificationCategory" EntityType="MASHIModel.Store.NotificationCategory" store:Type="Tables" Schema="AdminManagement" />
+          <EntitySet Name="Permission" EntityType="MASHIModel.Store.Permission" store:Type="Tables" Schema="AdminManagement" />
+          <EntitySet Name="State" EntityType="MASHIModel.Store.State" store:Type="Tables" Schema="AdminManagement" />
+          <EntitySet Name="SchemeDocument" EntityType="MASHIModel.Store.SchemeDocument" store:Type="Tables" Schema="SchemeManagement" />
+          <EntitySet Name="SchemeType" EntityType="MASHIModel.Store.SchemeType" store:Type="Tables" Schema="SchemeManagement" />
+          <EntitySet Name="Store" EntityType="MASHIModel.Store.Store" store:Type="Tables" Schema="StoreManagement" />
+          <EntitySet Name="StoreCategory" EntityType="MASHIModel.Store.StoreCategory" store:Type="Tables" Schema="StoreManagement" />
+          <EntitySet Name="Module" EntityType="MASHIModel.Store.Module" store:Type="Tables" Schema="UserManagement" />
+          <EntitySet Name="Role" EntityType="MASHIModel.Store.Role" store:Type="Tables" Schema="UserManagement" />
+          <EntitySet Name="RoleModulePermission" EntityType="MASHIModel.Store.RoleModulePermission" store:Type="Tables" Schema="UserManagement" />
+          <EntitySet Name="User" EntityType="MASHIModel.Store.User" store:Type="Tables" Schema="UserManagement" />
+          <EntitySet Name="UserRole" EntityType="MASHIModel.Store.UserRole" store:Type="Tables" Schema="UserManagement" />
+          <AssociationSet Name="FK_City_Country" Association="MASHIModel.Store.FK_City_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_State" Association="MASHIModel.Store.FK_City_State">
+            <End Role="State" EntitySet="State" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FCMNotification_NotificationCategoryId" Association="MASHIModel.Store.FK_FCMNotification_NotificationCategoryId">
+            <End Role="NotificationCategory" EntitySet="NotificationCategory" />
+            <End Role="FCMNotification" EntitySet="FCMNotification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoleModulePermission_Module" Association="MASHIModel.Store.FK_RoleModulePermission_Module">
+            <End Role="Module" EntitySet="Module" />
+            <End Role="RoleModulePermission" EntitySet="RoleModulePermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoleModulePermission_Permission" Association="MASHIModel.Store.FK_RoleModulePermission_Permission">
+            <End Role="Permission" EntitySet="Permission" />
+            <End Role="RoleModulePermission" EntitySet="RoleModulePermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoleModulePermission_Role" Association="MASHIModel.Store.FK_RoleModulePermission_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="RoleModulePermission" EntitySet="RoleModulePermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchemeDocument_SchemeDocumentCategory" Association="MASHIModel.Store.FK_SchemeDocument_SchemeDocumentCategory">
+            <End Role="SchemeType" EntitySet="SchemeType" />
+            <End Role="SchemeDocument" EntitySet="SchemeDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_State_Country" Association="MASHIModel.Store.FK_State_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="State" EntitySet="State" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_City" Association="MASHIModel.Store.FK_Store_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Store" EntitySet="Store" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Country" Association="MASHIModel.Store.FK_Store_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Store" EntitySet="Store" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_State" Association="MASHIModel.Store.FK_Store_State">
+            <End Role="State" EntitySet="State" />
+            <End Role="Store" EntitySet="Store" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_StoreCategory" Association="MASHIModel.Store.FK_Store_StoreCategory">
+            <End Role="StoreCategory" EntitySet="StoreCategory" />
+            <End Role="Store" EntitySet="Store" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_User" Association="MASHIModel.Store.FK_UserRole_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="AbCityName" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="CountryId" Type="smallint" />
+          <Property Name="StateId" Type="smallint" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="CountryCode" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="AbCountryName" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="AbCountryCode" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="CountryMobileCode" Type="nvarchar" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="EmailAccount">
+          <Key>
+            <PropertyRef Name="EmailAccountId" />
+          </Key>
+          <Property Name="EmailAccountId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MailType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="FromEmail" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Host" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Port" Type="int" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="EnableSsl" Type="bit" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Domain" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FCMNotification">
+          <Key>
+            <PropertyRef Name="FCMNotificationId" />
+          </Key>
+          <Property Name="FCMNotificationId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="bigint" />
+          <Property Name="NotificationCategoryId" Type="int" />
+          <Property Name="Title" Type="nvarchar" MaxLength="1024" />
+          <Property Name="NotificationType" Type="nvarchar" MaxLength="256" />
+          <Property Name="NotificationTypePath" Type="nvarchar" MaxLength="1024" />
+          <Property Name="NotificationTypeText" Type="nvarchar" MaxLength="2048" />
+          <Property Name="NotificationCode" Type="nvarchar" MaxLength="1024" />
+          <Property Name="IsSent" Type="bit" />
+          <Property Name="SentDate" Type="datetime" />
+          <Property Name="TransactionId" Type="nvarchar" MaxLength="1024" />
+          <Property Name="FCMResponse" Type="nvarchar" MaxLength="1024" />
+          <Property Name="IsRead" Type="bit" />
+          <Property Name="ReadDate" Type="datetime" />
+          <Property Name="RetryCount" Type="int" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MessageType" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailAccountId" Type="int" />
+          <Property Name="MailPriority" Type="int" />
+          <Property Name="From" Type="nvarchar" MaxLength="546" />
+          <Property Name="To" Type="nvarchar" MaxLength="546" />
+          <Property Name="Body" Type="nvarchar(max)" />
+          <Property Name="CC" Type="nvarchar" MaxLength="1024" />
+          <Property Name="BCC" Type="nvarchar(max)" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="2048" />
+          <Property Name="IsAttachment" Type="bit" />
+          <Property Name="AttachmentPath" Type="nvarchar" MaxLength="512" />
+          <Property Name="UserId" Type="bigint" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="SentStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="SentDate" Type="datetime" />
+          <Property Name="DeliverStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeliveryDate" Type="datetime" />
+          <Property Name="SentResponse" Type="nvarchar(max)" />
+          <Property Name="TransactionId" Type="nvarchar" MaxLength="1024" />
+        </EntityType>
+        <EntityType Name="NotificationCategory">
+          <Key>
+            <PropertyRef Name="NotificationCategoryId" />
+          </Key>
+          <Property Name="NotificationCategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NotificationCategoryName" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="AbNotificationCategoryName" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="IsEnable" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="PermissionId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PermissionName" Type="nvarchar" Nullable="false" MaxLength="16" />
+          <Property Name="Description" Type="nvarchar" MaxLength="512" />
+          <Property Name="AbPermissionName" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="AbDescription" Type="nvarchar" MaxLength="2048" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StateName" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="AbStateName" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="CountryId" Type="smallint" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="SchemeDocument">
+          <Key>
+            <PropertyRef Name="SchemeDocumentId" />
+          </Key>
+          <Property Name="SchemeDocumentId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SchemeDocumentName" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="AbSchemeDocumentName" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1024" />
+          <Property Name="AbDescription" Type="nvarchar" MaxLength="2048" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="2048" />
+          <Property Name="PDFPath" Type="nvarchar" MaxLength="2048" />
+          <Property Name="SchemeTypeId" Type="int" Nullable="false" />
+          <Property Name="SchemeDocumentOrder" Type="int" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SchemeType">
+          <Key>
+            <PropertyRef Name="SchemeTypeId" />
+          </Key>
+          <Property Name="SchemeTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SchemeTypeCode" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="SchemeTypeName" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="AbSchemeTypeName" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="IsEnabled" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreId" />
+          </Key>
+          <Property Name="StoreId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StoreCode" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="StoreName" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="AbStoreName" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="StoreOwnerName" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="AbStoreOwnerName" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1024" />
+          <Property Name="AbDescription" Type="nvarchar" MaxLength="2048" />
+          <Property Name="StoreCategoryId" Type="int" Nullable="false" />
+          <Property Name="Latitude" Type="varchar" MaxLength="128" />
+          <Property Name="Longitude" Type="varchar" MaxLength="128" />
+          <Property Name="CountryId" Type="smallint" />
+          <Property Name="StateId" Type="smallint" />
+          <Property Name="CityId" Type="bigint" />
+          <Property Name="Pincode" Type="nvarchar" MaxLength="128" />
+          <Property Name="AbPincode" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsEnabled" Type="bit" Nullable="false" />
+          <Property Name="StoreOrder" Type="int" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="StoreFor" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StoreCategory">
+          <Key>
+            <PropertyRef Name="StoreCategoryId" />
+          </Key>
+          <Property Name="StoreCategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StoreCategoryCode" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="StoreCategoryName" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="AbStoreCategoryName" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="IsEnabled" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="ParentStoreCategoryId" Type="int" />
+        </EntityType>
+        <EntityType Name="Module">
+          <Key>
+            <PropertyRef Name="ModuleId" />
+          </Key>
+          <Property Name="ModuleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ModuleName" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1024" />
+          <Property Name="AbModuleName" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="AbDescription" Type="nvarchar" MaxLength="1024" />
+          <Property Name="ApplicationId" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="Url" Type="nvarchar" MaxLength="1024" />
+          <Property Name="ParentModuleId" Type="int" />
+          <Property Name="IsEnabled" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModuleOrder" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="AbRoleName" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1024" />
+          <Property Name="AbDescription" Type="nvarchar" MaxLength="1024" />
+          <Property Name="IsEnabled" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="DefaultUrl" Type="nvarchar" MaxLength="512" />
+        </EntityType>
+        <EntityType Name="RoleModulePermission">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="ModuleId" />
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="ModuleId" Type="int" Nullable="false" />
+          <Property Name="PermissionId" Type="tinyint" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="448" />
+          <Property Name="IsTrackingEnabled" Type="bit" Nullable="false" />
+          <Property Name="TrackingInterval" Type="smallint" />
+          <Property Name="ParentUserId" Type="bigint" />
+          <Property Name="IsEnabled" Type="bit" Nullable="false" />
+          <Property Name="ProfilePhotoPath" Type="nvarchar" MaxLength="512" />
+          <Property Name="Salt" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="Password" Type="varbinary" Nullable="false" MaxLength="256" />
+          <Property Name="AppMode" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="AbFullName" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="Gender" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="CountryId" Type="smallint" />
+          <Property Name="StateId" Type="smallint" />
+          <Property Name="CityId" Type="bigint" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="512" />
+          <Property Name="MobileNumber" Type="nvarchar" MaxLength="512" />
+          <Property Name="UserType" Type="nvarchar" MaxLength="256" />
+          <Property Name="OTP" Type="nvarchar" MaxLength="32" />
+          <Property Name="IsOTPEnabled" Type="bit" />
+          <Property Name="IsResetDone" Type="bit" />
+          <Property Name="IsPushLogoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="SOSLimit" Type="int" Nullable="false" />
+          <Property Name="IsTrackEventEnabled" Type="bit" Nullable="false" />
+          <Property Name="Token" Type="nvarchar" MaxLength="1024" />
+          <Property Name="IsLogin" Type="bit" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" />
+          <Property Name="TokenExpiresOn" Type="datetime" />
+          <Property Name="ApplicationId" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="GCMRegistrationId" Type="nvarchar" MaxLength="1024" />
+          <Property Name="UniqueCode" Type="nvarchar" MaxLength="248" />
+          <Property Name="UserRating" Type="smallint" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserRoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_City_Country">
+          <End Role="Country" Type="MASHIModel.Store.Country" Multiplicity="0..1" />
+          <End Role="City" Type="MASHIModel.Store.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_State">
+          <End Role="State" Type="MASHIModel.Store.State" Multiplicity="0..1" />
+          <End Role="City" Type="MASHIModel.Store.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FCMNotification_NotificationCategoryId">
+          <End Role="NotificationCategory" Type="MASHIModel.Store.NotificationCategory" Multiplicity="0..1" />
+          <End Role="FCMNotification" Type="MASHIModel.Store.FCMNotification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationCategory">
+              <PropertyRef Name="NotificationCategoryId" />
+            </Principal>
+            <Dependent Role="FCMNotification">
+              <PropertyRef Name="NotificationCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoleModulePermission_Module">
+          <End Role="Module" Type="MASHIModel.Store.Module" Multiplicity="1" />
+          <End Role="RoleModulePermission" Type="MASHIModel.Store.RoleModulePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Module">
+              <PropertyRef Name="ModuleId" />
+            </Principal>
+            <Dependent Role="RoleModulePermission">
+              <PropertyRef Name="ModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoleModulePermission_Permission">
+          <End Role="Permission" Type="MASHIModel.Store.Permission" Multiplicity="1" />
+          <End Role="RoleModulePermission" Type="MASHIModel.Store.RoleModulePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permission">
+              <PropertyRef Name="PermissionId" />
+            </Principal>
+            <Dependent Role="RoleModulePermission">
+              <PropertyRef Name="PermissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoleModulePermission_Role">
+          <End Role="Role" Type="MASHIModel.Store.Role" Multiplicity="1" />
+          <End Role="RoleModulePermission" Type="MASHIModel.Store.RoleModulePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="RoleModulePermission">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchemeDocument_SchemeDocumentCategory">
+          <End Role="SchemeType" Type="MASHIModel.Store.SchemeType" Multiplicity="1" />
+          <End Role="SchemeDocument" Type="MASHIModel.Store.SchemeDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SchemeType">
+              <PropertyRef Name="SchemeTypeId" />
+            </Principal>
+            <Dependent Role="SchemeDocument">
+              <PropertyRef Name="SchemeTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_State_Country">
+          <End Role="Country" Type="MASHIModel.Store.Country" Multiplicity="0..1" />
+          <End Role="State" Type="MASHIModel.Store.State" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="State">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_City">
+          <End Role="City" Type="MASHIModel.Store.City" Multiplicity="0..1" />
+          <End Role="Store" Type="MASHIModel.Store.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Country">
+          <End Role="Country" Type="MASHIModel.Store.Country" Multiplicity="0..1" />
+          <End Role="Store" Type="MASHIModel.Store.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_State">
+          <End Role="State" Type="MASHIModel.Store.State" Multiplicity="0..1" />
+          <End Role="Store" Type="MASHIModel.Store.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_StoreCategory">
+          <End Role="StoreCategory" Type="MASHIModel.Store.StoreCategory" Multiplicity="1" />
+          <End Role="Store" Type="MASHIModel.Store.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StoreCategory">
+              <PropertyRef Name="StoreCategoryId" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="StoreCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_User">
+          <End Role="User" Type="MASHIModel.Store.User" Multiplicity="1" />
+          <End Role="UserRole" Type="MASHIModel.Store.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MASHIModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MASHIEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Cities" EntityType="MASHIModel.City" />
+          <EntitySet Name="Countries" EntityType="MASHIModel.Country" />
+          <EntitySet Name="EmailAccounts" EntityType="MASHIModel.EmailAccount" />
+          <EntitySet Name="FCMNotifications" EntityType="MASHIModel.FCMNotification" />
+          <EntitySet Name="Messages" EntityType="MASHIModel.Message" />
+          <EntitySet Name="NotificationCategories" EntityType="MASHIModel.NotificationCategory" />
+          <EntitySet Name="Permissions" EntityType="MASHIModel.Permission" />
+          <EntitySet Name="States" EntityType="MASHIModel.State" />
+          <EntitySet Name="SchemeDocuments" EntityType="MASHIModel.SchemeDocument" />
+          <EntitySet Name="SchemeTypes" EntityType="MASHIModel.SchemeType" />
+          <EntitySet Name="Stores" EntityType="MASHIModel.Store" />
+          <EntitySet Name="StoreCategories" EntityType="MASHIModel.StoreCategory" />
+          <EntitySet Name="Modules" EntityType="MASHIModel.Module" />
+          <EntitySet Name="Roles" EntityType="MASHIModel.Role" />
+          <EntitySet Name="RoleModulePermissions" EntityType="MASHIModel.RoleModulePermission" />
+          <EntitySet Name="Users" EntityType="MASHIModel.User" />
+          <EntitySet Name="UserRoles" EntityType="MASHIModel.UserRole" />
+          <AssociationSet Name="FK_City_Country" Association="MASHIModel.FK_City_Country">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="City" EntitySet="Cities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_State" Association="MASHIModel.FK_City_State">
+            <End Role="State" EntitySet="States" />
+            <End Role="City" EntitySet="Cities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_City" Association="MASHIModel.FK_Store_City">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Store" EntitySet="Stores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_State_Country" Association="MASHIModel.FK_State_Country">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="State" EntitySet="States" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Country" Association="MASHIModel.FK_Store_Country">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Store" EntitySet="Stores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FCMNotification_NotificationCategoryId" Association="MASHIModel.FK_FCMNotification_NotificationCategoryId">
+            <End Role="NotificationCategory" EntitySet="NotificationCategories" />
+            <End Role="FCMNotification" EntitySet="FCMNotifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoleModulePermission_Permission" Association="MASHIModel.FK_RoleModulePermission_Permission">
+            <End Role="Permission" EntitySet="Permissions" />
+            <End Role="RoleModulePermission" EntitySet="RoleModulePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_State" Association="MASHIModel.FK_Store_State">
+            <End Role="State" EntitySet="States" />
+            <End Role="Store" EntitySet="Stores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchemeDocument_SchemeDocumentCategory" Association="MASHIModel.FK_SchemeDocument_SchemeDocumentCategory">
+            <End Role="SchemeType" EntitySet="SchemeTypes" />
+            <End Role="SchemeDocument" EntitySet="SchemeDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_StoreCategory" Association="MASHIModel.FK_Store_StoreCategory">
+            <End Role="StoreCategory" EntitySet="StoreCategories" />
+            <End Role="Store" EntitySet="Stores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoleModulePermission_Module" Association="MASHIModel.FK_RoleModulePermission_Module">
+            <End Role="Module" EntitySet="Modules" />
+            <End Role="RoleModulePermission" EntitySet="RoleModulePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoleModulePermission_Role" Association="MASHIModel.FK_RoleModulePermission_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="RoleModulePermission" EntitySet="RoleModulePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_User" Association="MASHIModel.FK_UserRole_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserRole" EntitySet="UserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="AbCityName" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="CountryId" Type="Int16" />
+          <Property Name="StateId" Type="Int16" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="Country" Relationship="MASHIModel.FK_City_Country" FromRole="City" ToRole="Country" />
+          <NavigationProperty Name="State" Relationship="MASHIModel.FK_City_State" FromRole="City" ToRole="State" />
+          <NavigationProperty Name="Stores" Relationship="MASHIModel.FK_Store_City" FromRole="City" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="CountryCode" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="AbCountryName" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="AbCountryCode" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="CountryMobileCode" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Cities" Relationship="MASHIModel.FK_City_Country" FromRole="Country" ToRole="City" />
+          <NavigationProperty Name="States" Relationship="MASHIModel.FK_State_Country" FromRole="Country" ToRole="State" />
+          <NavigationProperty Name="Stores" Relationship="MASHIModel.FK_Store_Country" FromRole="Country" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="EmailAccount">
+          <Key>
+            <PropertyRef Name="EmailAccountId" />
+          </Key>
+          <Property Name="EmailAccountId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MailType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FromEmail" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="DisplayName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Host" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Port" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="EnableSsl" Type="Boolean" Nullable="false" />
+          <Property Name="Key" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Domain" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FCMNotification">
+          <Key>
+            <PropertyRef Name="FCMNotificationId" />
+          </Key>
+          <Property Name="FCMNotificationId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int64" />
+          <Property Name="NotificationCategoryId" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="NotificationType" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="NotificationTypePath" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="NotificationTypeText" Type="String" MaxLength="2048" Unicode="true" FixedLength="false" />
+          <Property Name="NotificationCode" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="IsSent" Type="Boolean" />
+          <Property Name="SentDate" Type="DateTime" Precision="3" />
+          <Property Name="TransactionId" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="FCMResponse" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="IsRead" Type="Boolean" />
+          <Property Name="ReadDate" Type="DateTime" Precision="3" />
+          <Property Name="RetryCount" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <NavigationProperty Name="NotificationCategory" Relationship="MASHIModel.FK_FCMNotification_NotificationCategoryId" FromRole="FCMNotification" ToRole="NotificationCategory" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MessageType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EmailAccountId" Type="Int32" />
+          <Property Name="MailPriority" Type="Int32" />
+          <Property Name="From" Type="String" MaxLength="546" Unicode="true" FixedLength="false" />
+          <Property Name="To" Type="String" MaxLength="546" Unicode="true" FixedLength="false" />
+          <Property Name="Body" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CC" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="BCC" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Subject" Type="String" MaxLength="2048" Unicode="true" FixedLength="false" />
+          <Property Name="IsAttachment" Type="Boolean" />
+          <Property Name="AttachmentPath" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int64" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="SentStatus" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SentDate" Type="DateTime" Precision="3" />
+          <Property Name="DeliverStatus" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+          <Property Name="SentResponse" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="TransactionId" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="NotificationCategory">
+          <Key>
+            <PropertyRef Name="NotificationCategoryId" />
+          </Key>
+          <Property Name="NotificationCategoryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="NotificationCategoryName" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="AbNotificationCategoryName" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="IsEnable" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="FCMNotifications" Relationship="MASHIModel.FK_FCMNotification_NotificationCategoryId" FromRole="NotificationCategory" ToRole="FCMNotification" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="PermissionId" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PermissionName" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="AbPermissionName" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="AbDescription" Type="String" MaxLength="2048" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="RoleModulePermissions" Relationship="MASHIModel.FK_RoleModulePermission_Permission" FromRole="Permission" ToRole="RoleModulePermission" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="StateName" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="AbStateName" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="CountryId" Type="Int16" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="Cities" Relationship="MASHIModel.FK_City_State" FromRole="State" ToRole="City" />
+          <NavigationProperty Name="Country" Relationship="MASHIModel.FK_State_Country" FromRole="State" ToRole="Country" />
+          <NavigationProperty Name="Stores" Relationship="MASHIModel.FK_Store_State" FromRole="State" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="SchemeDocument">
+          <Key>
+            <PropertyRef Name="SchemeDocumentId" />
+          </Key>
+          <Property Name="SchemeDocumentId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SchemeDocumentName" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="AbSchemeDocumentName" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="AbDescription" Type="String" MaxLength="2048" Unicode="true" FixedLength="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="2048" Unicode="true" FixedLength="false" />
+          <Property Name="PDFPath" Type="String" MaxLength="2048" Unicode="true" FixedLength="false" />
+          <Property Name="SchemeTypeId" Type="Int32" Nullable="false" />
+          <Property Name="SchemeDocumentOrder" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="SchemeType" Relationship="MASHIModel.FK_SchemeDocument_SchemeDocumentCategory" FromRole="SchemeDocument" ToRole="SchemeType" />
+        </EntityType>
+        <EntityType Name="SchemeType">
+          <Key>
+            <PropertyRef Name="SchemeTypeId" />
+          </Key>
+          <Property Name="SchemeTypeId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SchemeTypeCode" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="SchemeTypeName" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="AbSchemeTypeName" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="SchemeDocuments" Relationship="MASHIModel.FK_SchemeDocument_SchemeDocumentCategory" FromRole="SchemeType" ToRole="SchemeDocument" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreId" />
+          </Key>
+          <Property Name="StoreId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreCode" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="StoreName" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="AbStoreName" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="StoreOwnerName" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="AbStoreOwnerName" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="AbDescription" Type="String" MaxLength="2048" Unicode="true" FixedLength="false" />
+          <Property Name="StoreCategoryId" Type="Int32" Nullable="false" />
+          <Property Name="Latitude" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="Longitude" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="CountryId" Type="Int16" />
+          <Property Name="StateId" Type="Int16" />
+          <Property Name="CityId" Type="Int64" />
+          <Property Name="Pincode" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="AbPincode" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="StoreOrder" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="StoreFor" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="City" Relationship="MASHIModel.FK_Store_City" FromRole="Store" ToRole="City" />
+          <NavigationProperty Name="Country" Relationship="MASHIModel.FK_Store_Country" FromRole="Store" ToRole="Country" />
+          <NavigationProperty Name="State" Relationship="MASHIModel.FK_Store_State" FromRole="Store" ToRole="State" />
+          <NavigationProperty Name="StoreCategory" Relationship="MASHIModel.FK_Store_StoreCategory" FromRole="Store" ToRole="StoreCategory" />
+        </EntityType>
+        <EntityType Name="StoreCategory">
+          <Key>
+            <PropertyRef Name="StoreCategoryId" />
+          </Key>
+          <Property Name="StoreCategoryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreCategoryCode" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="StoreCategoryName" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="AbStoreCategoryName" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="ParentStoreCategoryId" Type="Int32" />
+          <NavigationProperty Name="Stores" Relationship="MASHIModel.FK_Store_StoreCategory" FromRole="StoreCategory" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Module">
+          <Key>
+            <PropertyRef Name="ModuleId" />
+          </Key>
+          <Property Name="ModuleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ModuleName" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="AbModuleName" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="AbDescription" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="ApplicationId" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="Url" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="ParentModuleId" Type="Int32" />
+          <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModuleOrder" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RoleModulePermissions" Relationship="MASHIModel.FK_RoleModulePermission_Module" FromRole="Module" ToRole="RoleModulePermission" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="AbRoleName" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="AbDescription" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="DefaultUrl" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="RoleModulePermissions" Relationship="MASHIModel.FK_RoleModulePermission_Role" FromRole="Role" ToRole="RoleModulePermission" />
+        </EntityType>
+        <EntityType Name="RoleModulePermission">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="ModuleId" />
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="ModuleId" Type="Int32" Nullable="false" />
+          <Property Name="PermissionId" Type="Byte" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Permission" Relationship="MASHIModel.FK_RoleModulePermission_Permission" FromRole="RoleModulePermission" ToRole="Permission" />
+          <NavigationProperty Name="Module" Relationship="MASHIModel.FK_RoleModulePermission_Module" FromRole="RoleModulePermission" ToRole="Module" />
+          <NavigationProperty Name="Role" Relationship="MASHIModel.FK_RoleModulePermission_Role" FromRole="RoleModulePermission" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="448" Unicode="true" FixedLength="false" />
+          <Property Name="IsTrackingEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="TrackingInterval" Type="Int16" />
+          <Property Name="ParentUserId" Type="Int64" />
+          <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="ProfilePhotoPath" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="Salt" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="Binary" Nullable="false" MaxLength="256" FixedLength="false" />
+          <Property Name="AppMode" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="AbFullName" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CountryId" Type="Int16" />
+          <Property Name="StateId" Type="Int16" />
+          <Property Name="CityId" Type="Int64" />
+          <Property Name="EmailId" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="MobileNumber" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="UserType" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="OTP" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="IsOTPEnabled" Type="Boolean" />
+          <Property Name="IsResetDone" Type="Boolean" />
+          <Property Name="IsPushLogoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="SOSLimit" Type="Int32" Nullable="false" />
+          <Property Name="IsTrackEventEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="Token" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="IsLogin" Type="Boolean" Nullable="false" />
+          <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+          <Property Name="TokenExpiresOn" Type="DateTime" Precision="3" />
+          <Property Name="ApplicationId" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="GCMRegistrationId" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="UniqueCode" Type="String" MaxLength="248" Unicode="true" FixedLength="false" />
+          <Property Name="UserRating" Type="Int16" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="UserRoles" Relationship="MASHIModel.FK_UserRole_User" FromRole="User" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserRoleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int64" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="MASHIModel.FK_UserRole_User" FromRole="UserRole" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_City_Country">
+          <End Role="Country" Type="MASHIModel.Country" Multiplicity="0..1" />
+          <End Role="City" Type="MASHIModel.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_State">
+          <End Role="State" Type="MASHIModel.State" Multiplicity="0..1" />
+          <End Role="City" Type="MASHIModel.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_City">
+          <End Role="City" Type="MASHIModel.City" Multiplicity="0..1" />
+          <End Role="Store" Type="MASHIModel.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_State_Country">
+          <End Role="Country" Type="MASHIModel.Country" Multiplicity="0..1" />
+          <End Role="State" Type="MASHIModel.State" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="State">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Country">
+          <End Role="Country" Type="MASHIModel.Country" Multiplicity="0..1" />
+          <End Role="Store" Type="MASHIModel.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FCMNotification_NotificationCategoryId">
+          <End Role="NotificationCategory" Type="MASHIModel.NotificationCategory" Multiplicity="0..1" />
+          <End Role="FCMNotification" Type="MASHIModel.FCMNotification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationCategory">
+              <PropertyRef Name="NotificationCategoryId" />
+            </Principal>
+            <Dependent Role="FCMNotification">
+              <PropertyRef Name="NotificationCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoleModulePermission_Permission">
+          <End Role="Permission" Type="MASHIModel.Permission" Multiplicity="1" />
+          <End Role="RoleModulePermission" Type="MASHIModel.RoleModulePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permission">
+              <PropertyRef Name="PermissionId" />
+            </Principal>
+            <Dependent Role="RoleModulePermission">
+              <PropertyRef Name="PermissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_State">
+          <End Role="State" Type="MASHIModel.State" Multiplicity="0..1" />
+          <End Role="Store" Type="MASHIModel.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchemeDocument_SchemeDocumentCategory">
+          <End Role="SchemeType" Type="MASHIModel.SchemeType" Multiplicity="1" />
+          <End Role="SchemeDocument" Type="MASHIModel.SchemeDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SchemeType">
+              <PropertyRef Name="SchemeTypeId" />
+            </Principal>
+            <Dependent Role="SchemeDocument">
+              <PropertyRef Name="SchemeTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_StoreCategory">
+          <End Role="StoreCategory" Type="MASHIModel.StoreCategory" Multiplicity="1" />
+          <End Role="Store" Type="MASHIModel.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StoreCategory">
+              <PropertyRef Name="StoreCategoryId" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="StoreCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoleModulePermission_Module">
+          <End Role="Module" Type="MASHIModel.Module" Multiplicity="1" />
+          <End Role="RoleModulePermission" Type="MASHIModel.RoleModulePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Module">
+              <PropertyRef Name="ModuleId" />
+            </Principal>
+            <Dependent Role="RoleModulePermission">
+              <PropertyRef Name="ModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoleModulePermission_Role">
+          <End Role="Role" Type="MASHIModel.Role" Multiplicity="1" />
+          <End Role="RoleModulePermission" Type="MASHIModel.RoleModulePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="RoleModulePermission">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_User">
+          <End Role="User" Type="MASHIModel.User" Multiplicity="1" />
+          <End Role="UserRole" Type="MASHIModel.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MASHIModelStoreContainer" CdmEntityContainer="MASHIEntities">
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="MASHIModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="AbCityName" ColumnName="AbCityName" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="MASHIModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="AbCountryName" ColumnName="AbCountryName" />
+                <ScalarProperty Name="AbCountryCode" ColumnName="AbCountryCode" />
+                <ScalarProperty Name="CountryMobileCode" ColumnName="CountryMobileCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmailAccounts">
+            <EntityTypeMapping TypeName="MASHIModel.EmailAccount">
+              <MappingFragment StoreEntitySet="EmailAccount">
+                <ScalarProperty Name="EmailAccountId" ColumnName="EmailAccountId" />
+                <ScalarProperty Name="MailType" ColumnName="MailType" />
+                <ScalarProperty Name="FromEmail" ColumnName="FromEmail" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Host" ColumnName="Host" />
+                <ScalarProperty Name="Port" ColumnName="Port" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EnableSsl" ColumnName="EnableSsl" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="Domain" ColumnName="Domain" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FCMNotifications">
+            <EntityTypeMapping TypeName="MASHIModel.FCMNotification">
+              <MappingFragment StoreEntitySet="FCMNotification">
+                <ScalarProperty Name="FCMNotificationId" ColumnName="FCMNotificationId" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="NotificationCategoryId" ColumnName="NotificationCategoryId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="NotificationType" ColumnName="NotificationType" />
+                <ScalarProperty Name="NotificationTypePath" ColumnName="NotificationTypePath" />
+                <ScalarProperty Name="NotificationTypeText" ColumnName="NotificationTypeText" />
+                <ScalarProperty Name="NotificationCode" ColumnName="NotificationCode" />
+                <ScalarProperty Name="IsSent" ColumnName="IsSent" />
+                <ScalarProperty Name="SentDate" ColumnName="SentDate" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+                <ScalarProperty Name="FCMResponse" ColumnName="FCMResponse" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+                <ScalarProperty Name="ReadDate" ColumnName="ReadDate" />
+                <ScalarProperty Name="RetryCount" ColumnName="RetryCount" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="MASHIModel.Message">
+              <MappingFragment StoreEntitySet="Message">
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+                <ScalarProperty Name="MessageType" ColumnName="MessageType" />
+                <ScalarProperty Name="EmailAccountId" ColumnName="EmailAccountId" />
+                <ScalarProperty Name="MailPriority" ColumnName="MailPriority" />
+                <ScalarProperty Name="From" ColumnName="From" />
+                <ScalarProperty Name="To" ColumnName="To" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="CC" ColumnName="CC" />
+                <ScalarProperty Name="BCC" ColumnName="BCC" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="IsAttachment" ColumnName="IsAttachment" />
+                <ScalarProperty Name="AttachmentPath" ColumnName="AttachmentPath" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="SentStatus" ColumnName="SentStatus" />
+                <ScalarProperty Name="SentDate" ColumnName="SentDate" />
+                <ScalarProperty Name="DeliverStatus" ColumnName="DeliverStatus" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="SentResponse" ColumnName="SentResponse" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotificationCategories">
+            <EntityTypeMapping TypeName="MASHIModel.NotificationCategory">
+              <MappingFragment StoreEntitySet="NotificationCategory">
+                <ScalarProperty Name="NotificationCategoryId" ColumnName="NotificationCategoryId" />
+                <ScalarProperty Name="NotificationCategoryName" ColumnName="NotificationCategoryName" />
+                <ScalarProperty Name="AbNotificationCategoryName" ColumnName="AbNotificationCategoryName" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permissions">
+            <EntityTypeMapping TypeName="MASHIModel.Permission">
+              <MappingFragment StoreEntitySet="Permission">
+                <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+                <ScalarProperty Name="PermissionName" ColumnName="PermissionName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AbPermissionName" ColumnName="AbPermissionName" />
+                <ScalarProperty Name="AbDescription" ColumnName="AbDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="MASHIModel.State">
+              <MappingFragment StoreEntitySet="State">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="AbStateName" ColumnName="AbStateName" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SchemeDocuments">
+            <EntityTypeMapping TypeName="MASHIModel.SchemeDocument">
+              <MappingFragment StoreEntitySet="SchemeDocument">
+                <ScalarProperty Name="SchemeDocumentId" ColumnName="SchemeDocumentId" />
+                <ScalarProperty Name="SchemeDocumentName" ColumnName="SchemeDocumentName" />
+                <ScalarProperty Name="AbSchemeDocumentName" ColumnName="AbSchemeDocumentName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AbDescription" ColumnName="AbDescription" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="PDFPath" ColumnName="PDFPath" />
+                <ScalarProperty Name="SchemeTypeId" ColumnName="SchemeTypeId" />
+                <ScalarProperty Name="SchemeDocumentOrder" ColumnName="SchemeDocumentOrder" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SchemeTypes">
+            <EntityTypeMapping TypeName="MASHIModel.SchemeType">
+              <MappingFragment StoreEntitySet="SchemeType">
+                <ScalarProperty Name="SchemeTypeId" ColumnName="SchemeTypeId" />
+                <ScalarProperty Name="SchemeTypeCode" ColumnName="SchemeTypeCode" />
+                <ScalarProperty Name="SchemeTypeName" ColumnName="SchemeTypeName" />
+                <ScalarProperty Name="AbSchemeTypeName" ColumnName="AbSchemeTypeName" />
+                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="MASHIModel.Store">
+              <MappingFragment StoreEntitySet="Store">
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="StoreCode" ColumnName="StoreCode" />
+                <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+                <ScalarProperty Name="AbStoreName" ColumnName="AbStoreName" />
+                <ScalarProperty Name="StoreOwnerName" ColumnName="StoreOwnerName" />
+                <ScalarProperty Name="AbStoreOwnerName" ColumnName="AbStoreOwnerName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AbDescription" ColumnName="AbDescription" />
+                <ScalarProperty Name="StoreCategoryId" ColumnName="StoreCategoryId" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="AbPincode" ColumnName="AbPincode" />
+                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="StoreOrder" ColumnName="StoreOrder" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="StoreFor" ColumnName="StoreFor" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreCategories">
+            <EntityTypeMapping TypeName="MASHIModel.StoreCategory">
+              <MappingFragment StoreEntitySet="StoreCategory">
+                <ScalarProperty Name="StoreCategoryId" ColumnName="StoreCategoryId" />
+                <ScalarProperty Name="StoreCategoryCode" ColumnName="StoreCategoryCode" />
+                <ScalarProperty Name="StoreCategoryName" ColumnName="StoreCategoryName" />
+                <ScalarProperty Name="AbStoreCategoryName" ColumnName="AbStoreCategoryName" />
+                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="ParentStoreCategoryId" ColumnName="ParentStoreCategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modules">
+            <EntityTypeMapping TypeName="MASHIModel.Module">
+              <MappingFragment StoreEntitySet="Module">
+                <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+                <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AbModuleName" ColumnName="AbModuleName" />
+                <ScalarProperty Name="AbDescription" ColumnName="AbDescription" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="ParentModuleId" ColumnName="ParentModuleId" />
+                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModuleOrder" ColumnName="ModuleOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="MASHIModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="AbRoleName" ColumnName="AbRoleName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AbDescription" ColumnName="AbDescription" />
+                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DefaultUrl" ColumnName="DefaultUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoleModulePermissions">
+            <EntityTypeMapping TypeName="MASHIModel.RoleModulePermission">
+              <MappingFragment StoreEntitySet="RoleModulePermission">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+                <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MASHIModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="IsTrackingEnabled" ColumnName="IsTrackingEnabled" />
+                <ScalarProperty Name="TrackingInterval" ColumnName="TrackingInterval" />
+                <ScalarProperty Name="ParentUserId" ColumnName="ParentUserId" />
+                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="ProfilePhotoPath" ColumnName="ProfilePhotoPath" />
+                <ScalarProperty Name="Salt" ColumnName="Salt" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="AppMode" ColumnName="AppMode" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="AbFullName" ColumnName="AbFullName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="OTP" ColumnName="OTP" />
+                <ScalarProperty Name="IsOTPEnabled" ColumnName="IsOTPEnabled" />
+                <ScalarProperty Name="IsResetDone" ColumnName="IsResetDone" />
+                <ScalarProperty Name="IsPushLogoutEnabled" ColumnName="IsPushLogoutEnabled" />
+                <ScalarProperty Name="SOSLimit" ColumnName="SOSLimit" />
+                <ScalarProperty Name="IsTrackEventEnabled" ColumnName="IsTrackEventEnabled" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="IsLogin" ColumnName="IsLogin" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="TokenExpiresOn" ColumnName="TokenExpiresOn" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="GCMRegistrationId" ColumnName="GCMRegistrationId" />
+                <ScalarProperty Name="UniqueCode" ColumnName="UniqueCode" />
+                <ScalarProperty Name="UserRating" ColumnName="UserRating" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="MASHIModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRole">
+                <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
